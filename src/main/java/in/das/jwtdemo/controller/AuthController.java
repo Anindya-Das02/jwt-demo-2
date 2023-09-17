@@ -49,10 +49,4 @@ public class AuthController {
             throw new BadCredentialsException("Invalid Username or Password !!");
         }
     }
-
-    @ExceptionHandler(BadCredentialsException.class)
-    public String exceptionHandler() {
-        return "Credentials Invalid !!";
-    }
-
 }

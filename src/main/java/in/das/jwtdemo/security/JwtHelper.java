@@ -19,7 +19,6 @@ public class JwtHelper {
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {
-
         return getClaimFromToken(token, Claims::getSubject);
     }
 
