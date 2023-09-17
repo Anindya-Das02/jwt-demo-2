@@ -26,7 +26,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
             .cors(cors -> cors.disable())
             .authorizeHttpRequests(request -> {
-                request.requestMatchers("/auth/login","/public/**").permitAll().anyRequest().authenticated();
+                request.requestMatchers("/auth/login","/public/**","/auth/create").permitAll().anyRequest().authenticated();
             })
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .exceptionHandling(ex -> ex.authenticationEntryPoint(jwtAuthEntryPoint))
